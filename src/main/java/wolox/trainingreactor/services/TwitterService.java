@@ -50,10 +50,10 @@ public class TwitterService {
 
             ConfigurationBuilder cb = new ConfigurationBuilder();
             cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("GRpIu6q3DAwXgxo0OqfaDs15q")
-                .setOAuthConsumerSecret("4jnEwcbG75e7k3XJ0LpQr5qkd2hpZu44yu1EDRNeUqfXMeKhTH")
-                .setOAuthAccessToken("1137030251106770944-QdaJNrizA1aYpv5KpDpcAEdQkOQSrZ")
-                .setOAuthAccessTokenSecret("xCacCbRJAtxOm5BtikbE7cGgRUB6zHihOmv5heE85Zpg1");
+                .setOAuthConsumerKey("CONSUMER_KEY")
+                .setOAuthConsumerSecret("CONSUMER_SECRET")
+                .setOAuthAccessToken("ACCESS_TOKEN")
+                .setOAuthAccessTokenSecret("ACCESS_TOKEN_SECRET");
 
             TwitterStream twitterStream = new TwitterStreamFactory(cb.build()).getInstance();
             twitterStream.addListener(listener);
