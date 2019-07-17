@@ -21,4 +21,13 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile group: 'org.twitter4j', name: 'twitter4j-stream', version: '4.0.2'
     compile group: 'io.projectreactor', name: 'reactor-core', version: '3.2.6.RELEASE'
+
+    compile 'org.springframework.boot:spring-boot-starter-webflux'
+
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.google.guava:guava:20.0'
+    compile 'org.apache.commons:commons-collections4:4.0'
+    compile 'org.apache.httpcomponents:httpclient:4.3.4'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
 }

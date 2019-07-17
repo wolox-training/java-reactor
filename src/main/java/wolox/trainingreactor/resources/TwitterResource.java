@@ -1,6 +1,8 @@
 package wolox.trainingreactor.resources;
 
 import java.time.Duration;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +11,7 @@ import reactor.core.publisher.ConnectableFlux;
 import reactor.core.publisher.Flux;
 import twitter4j.Place;
 import twitter4j.Status;
+import wolox.trainingreactor.services.BotService;
 import wolox.trainingreactor.services.TwitterService;
 
 @RestController
@@ -22,14 +25,6 @@ public class TwitterResource {
         return flux
             .filter(status -> status.getText().contains("the"))
             .map(status -> status.getText());
-
-    }
-
-    @GetMapping(path = "/feed", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<String> feed() {
-        ConnectableFlux<Status> flux = TwitterService.getTwitterStream();
-
-        return flux.map(status -> status.getText());
 
     }
 
