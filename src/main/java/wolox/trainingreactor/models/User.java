@@ -1,6 +1,7 @@
 package wolox.trainingreactor.models;
 
 
+import java.util.Date;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -19,6 +20,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username;
+    private Date date;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_topic",
