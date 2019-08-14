@@ -1,5 +1,6 @@
 package wolox.trainingreactor.resources;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import wolox.trainingreactor.services.BotService;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 public class BotResource {
 
@@ -30,6 +32,12 @@ public class BotResource {
 
     @GetMapping (path = "/conversation", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Mono<String> conversation(@RequestParam List<String> names) {
-        return  botService.conversation(names);
+        long startTime = System.nanoTime();
+        Mono<String> response =  botService.conversation(names);
+        long endTime = System.nanoTime();
+
+        long duration = (endTime - startTime);
+        log.info("time to bots talk is " + duration + " milliseconds.");
+        return  response;
     }
 }
