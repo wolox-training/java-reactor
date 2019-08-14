@@ -81,8 +81,7 @@ public class BotService {
 
 
         AtomicReference<String> conversation = new AtomicReference<>("");
-        //String conversation = "";
-        Mono.when(list).block();
+
         for (Mono<BootResponse> monoResponse:list) {
             monoResponse.subscribe(
                     response -> {
@@ -103,7 +102,7 @@ public class BotService {
         for (String name:names) {
             int n = rand.nextInt(7) + 3;
             for (int i = 0; i < n; i++){
-                int length = rand.nextInt(190)+ 10;
+                int length = rand.nextInt(90)+ 10;
                 Talk talk = new Talk(name,length);
                 requests.add(talk);
             }
