@@ -1,25 +1,21 @@
 package wolox.trainingreactor.services;
 
-import lombok.extern.slf4j.Slf4j;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
-import sun.rmi.runtime.Log;
-import wolox.trainingreactor.models.BootResponse;
-import wolox.trainingreactor.models.Bot;
-import wolox.trainingreactor.models.Talk;
-import wolox.trainingreactor.utils.RequestUtils;
-
-import javax.annotation.PostConstruct;
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
+import javax.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
+import wolox.trainingreactor.models.BootResponse;
+import wolox.trainingreactor.models.Bot;
+import wolox.trainingreactor.models.Talk;
+import wolox.trainingreactor.utils.RequestUtils;
 
 @Service
 @Slf4j
